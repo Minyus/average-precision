@@ -32,6 +32,6 @@ if __name__ == "__main__":
             mm_apk = apk_multihot(y_true, y_scores, k=k)
             sk_apk = average_precision_score(y_true, y_scores, k=k)
 
-            assert mm_apk - sk_apk < 1e-6, f"top{k}: {mm_apk} != {sk_apk}"
+            assert abs(mm_apk) - sk_apk < 1e-6, f"top{k}: {mm_apk} != {sk_apk}"
             # print(f"[k={k}]", "mm_apk: ", mm_apk, "sk_apk:", sk_apk, "\n")
     print(f"Average Precision matched for y_true = {y_true}")
