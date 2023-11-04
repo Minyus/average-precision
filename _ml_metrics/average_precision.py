@@ -30,6 +30,7 @@ def apk(actual, predicted, k=10):
     """
     if not actual:
         return 0.0
+    actual = set(actual)
 
     if len(predicted) > k:
         predicted = predicted[:k]
